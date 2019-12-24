@@ -4,26 +4,40 @@ import Layout from '@/views/layout/Layout'
 
 Vue.use(VueRouter)
 
-const routes = [
-    {
-        path: '',
-        redirect: 'dashboard',
-        component: Layout,
-        children: [{
-            path: 'dashboard',
-            component: () => import('@/views/dashboard/index'),
-            name: 'dashboard',
-            meta: {
-                title: '面板',
-                icon: 'dashboard',
-                noCache: true
-            }
-        }]
+const routes = [{
+  path: '',
+  redirect: 'dashboard',
+  component: Layout,
+  children: [{
+    path: 'dashboard',
+    component: () => import('@/views/dashboard/index'),
+    name: 'dashboard',
+    meta: {
+      title: '面板',
+      icon: 'dashboard',
+      noCache: true
     }
+  }]
+},
+{
+  path: '/canvas',
+  redirect: 'canvas',
+  component: Layout,
+  children: [{
+    path: 'canvas',
+    component: () => import('@/views/canvas/index'),
+    name: 'canvas',
+    meta: {
+      title: '面板',
+      icon: 'dashboard',
+      noCache: true
+    }
+  }]
+}
 ]
 
 const router = new VueRouter({
-    routes
+  routes
 })
 
 export default router

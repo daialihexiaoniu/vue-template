@@ -11,13 +11,13 @@ import 'element-ui/lib/theme-chalk/base.css' // Element 内置过渡动画
 
 import '@/styles/index.scss'
 
-Vue.use(Element);
+Vue.use(Element)
 
 Vue.config.productionTip = false
 
 new Vue({
-    el: '#app',
-    router,
-    store,
-    render: h => h(App)
+  el: '#app',
+  router,
+  store,
+  render: h => h(App)
 })
