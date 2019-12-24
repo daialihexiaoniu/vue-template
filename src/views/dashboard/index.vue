@@ -5,17 +5,19 @@
         <el-card class="box-card">11</el-card>
       </el-col>
       <el-col :span="6">
-        <el-card class="box-card">11</el-card>
+        <el-card class="box-card">22</el-card>
       </el-col>
       <el-col :span="6">
-        <el-card class="box-card">11</el-card>
+        <el-card class="box-card">33</el-card>
       </el-col>
       <el-col :span="6">
-        <el-card class="box-card">11</el-card>
+        <el-card class="box-card">44</el-card>
       </el-col>
     </el-row>
 
-    <line-chart :chart-data="lineChartData" />
+    <div class="chart-area">
+      <line-chart :chart-data="lineChartData" />
+    </div>
   </div>
 </template>
 
@@ -58,10 +60,14 @@ export default {
 
 <style lang="scss" scoped>
 .box-card-wrap {
-  margin: 0 -20px;
+  margin: 0 -20px 32px;
 
   .box-card {
     margin: 0 20px;
   }
+}
+.chart-area {
+  background: #fff;
+  padding: 16px 16px 0;
 }
 </style>

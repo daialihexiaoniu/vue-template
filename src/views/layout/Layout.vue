@@ -1,29 +1,6 @@
 <template>
   <div class="wrap">
-    <div class="sidebar-container">
-      <el-menu
-        default-active="1"
-        background-color="#304156"
-        text-color="#bfcbd9"
-        active-text-color="#409EFF"
-      >
-        <router-link :to="{ name: 'dashboard' }">
-          <el-menu-item index="1">
-            <template slot="title">
-              <i class="el-icon-s-home" />
-              <span>首页</span>
-            </template>
-          </el-menu-item>
-        </router-link>
-
-        <router-link :to="{ name: 'canvas' }">
-          <el-menu-item index="2">
-            <i class="el-icon-menu" />
-            <span slot="title">canvas</span>
-          </el-menu-item>
-        </router-link>
-      </el-menu>
-    </div>
+    <SideBar />
 
     <div class="main-container">
       <keep-alive>
@@ -48,30 +25,16 @@
 </template>
 
 <script>
+import SideBar from './components/Sidebar'
 export default {
   name: 'Layout',
-  components: {}
+  components: {
+    SideBar
+  }
 }
 </script>
 
 <style lang="scss" scoped>
-.sidebar-container {
-  width: 210px;
-  text-align: left;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  background: #304156;
-  i {
-    color: #bfcbd9;
-  }
-  .el-menu {
-    border-right: 0;
-  }
-}
 .main-container {
   position: relative;
   margin-left: 210px;
