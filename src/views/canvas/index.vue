@@ -51,9 +51,9 @@ export default {
       for (let i = 1; i <= num; i++) {
         const newX = x + r * Math.cos((2 * Math.PI * i) / num)
         const newY = y + r * Math.sin((2 * Math.PI * i) / num)
-        this.context.lineTo(newX, newY)
+        this.drawLine(newX, newY, i)
       }
-      this.context.closePath()
+      this.drawLine(startX, startY, num + 1)
 
       this.context.fillStyle = '#9da'
       this.context.fill()
@@ -82,9 +82,10 @@ export default {
       this.context.beginPath()
       this.context.moveTo(pointArr[0][0], pointArr[0][1])
       for (let i = 1; i < pointArr.length; i++) {
-        this.context.lineTo(pointArr[i][0], pointArr[i][1])
+        this.drawLine(pointArr[i][0], pointArr[i][1], i)
       }
-      this.context.closePath()
+      this.drawLine(pointArr[0][0], pointArr[0][1], pointArr.length)
+
       this.context.fillStyle = '#9da'
       this.context.fill()
 
@@ -104,6 +105,14 @@ export default {
           y: newY
         })
       }
+    },
+    drawLine(pointA, pointB, i) {
+      this.context.strokeStyle = '#ff0000'
+
+      setTimeout(() => {
+        this.context.lineTo(pointA, pointB)
+        this.context.stroke()
+      }, i * 500)
     }
   }
 }
