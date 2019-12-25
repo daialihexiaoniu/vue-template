@@ -14,7 +14,7 @@ const routes = [{
     name: 'dashboard',
     meta: {
       title: '首页',
-      icon: 'dashboard',
+      icon: 'el-icon-s-home',
       noCache: true
     }
   }]
@@ -29,7 +29,7 @@ const routes = [{
     name: 'canvas',
     meta: {
       title: 'canvas',
-      icon: 'dashboard',
+      icon: 'el-icon-paperclip',
       noCache: true
     }
   }]

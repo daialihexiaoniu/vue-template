@@ -13,7 +13,7 @@
       <router-link v-for="(item, index) in router" :key="index" :to="item.path+'/'+item.children[0].path">
         <el-menu-item :index="item.path+'/'+item.children[0].path">
           <template slot="title">
-            <i class="el-icon-s-home" />
+            <i :class="item.children[0].meta.icon" />
             <span>{{ item.children[0].meta.title }}</span>
           </template>
         </el-menu-item>
