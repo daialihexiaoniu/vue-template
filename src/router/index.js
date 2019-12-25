@@ -33,6 +33,21 @@ const routes = [{
       noCache: true
     }
   }]
+},
+{
+  path: '/table',
+  redirect: 'canvas',
+  component: Layout,
+  children: [{
+    path: 'canvas',
+    component: () => import('@/views/table/index'),
+    name: 'canvas',
+    meta: {
+      title: '表格',
+      icon: 'el-icon-s-tools',
+      noCache: true
+    }
+  }]
 }
 ]
 
