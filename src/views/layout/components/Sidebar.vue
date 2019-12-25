@@ -10,19 +10,12 @@
       active-text-color="#409EFF"
       class="menu-container"
     >
-      <router-link :to="{ name: 'dashboard' }">
-        <el-menu-item index="/dashboard">
+      <router-link v-for="(item, index) in router" :key="index" :to="item.path+'/'+item.children[0].path">
+        <el-menu-item :index="item.path+'/'+item.children[0].path">
           <template slot="title">
             <i class="el-icon-s-home" />
-            <span>首页</span>
+            <span>{{ item.children[0].meta.title }}</span>
           </template>
-        </el-menu-item>
-      </router-link>
-
-      <router-link :to="{ name: 'canvas' }">
-        <el-menu-item index="/canvas/canvas">
-          <i class="el-icon-menu" />
-          <span slot="title">canvas</span>
         </el-menu-item>
       </router-link>
     </el-menu>
@@ -31,7 +24,15 @@
 
 <script>
 export default {
-  name: 'SideBar'
+  name: 'SideBar',
+  computed: {
+    router() {
+      return this.$router.options.routes
+    }
+  },
+  mounted() {
+    console.log(this.router)
+  }
 }
 </script>
 

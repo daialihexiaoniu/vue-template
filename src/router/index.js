@@ -13,7 +13,7 @@ const routes = [{
     component: () => import('@/views/dashboard/index'),
     name: 'dashboard',
     meta: {
-      title: '面板',
+      title: '首页',
       icon: 'dashboard',
       noCache: true
     }
@@ -28,7 +28,7 @@ const routes = [{
     component: () => import('@/views/canvas/index'),
     name: 'canvas',
     meta: {
-      title: '面板',
+      title: 'canvas',
       icon: 'dashboard',
       noCache: true
     }

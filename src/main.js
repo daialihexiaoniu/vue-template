@@ -21,3 +21,8 @@ new Vue({
   store,
   render: h => h(App)
 })
+
+// 路由首位
+// router.beforeEach((to, from, next) => {
+//   console.log(111)
+// })
